@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .dropdown ul {
+        position: absolute;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: none;
+      }
+
+      .dropdown li {
+        padding: 10px;
+        background-color: #f9f9f9;
+      }
+
+      .dropdown li:hover,
+      .dropdown li:focus,
+      .dropdown li:active {
+        background-color: #3498db;
+        color: #fff;
+      }
+
+      .dropdown[aria-expanded="true"] ul {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dropdown" onclick="toggleDropdown(this)">
+      <button
+        aria-haspopup="true"
+        id="menubutton"
+        aria-expanded="false"
+        aria-controls="dropdown-content"
+      >
+        Dropdown
+      </button>
+      <ul role="menu" aria-labelledby="menubutton" id="dropdown-content">
+        <li role="presentation">
+          <button role="menuitem" onclick="handleItemClick('Option 1')">
+            Option 1
+          </button>
+        </li>
+        <li role="presentation">
+          <button role="menuitem" onclick="handleItemClick('Option 2')">
+            Option 2
+          </button>
+        </li>
+        <li role="presentation">
+          <button role="menuitem" onclick="handleItemClick('Option 3')">
+            Option 3
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="dropdown" onclick="toggleDropdown(this)">
+      <button
+        aria-haspopup="true"
+        id="menubutton"
+        aria-expanded="false"
+        aria-controls="dropdown-content"
+      >
+        Dropdown
+      </button>
+      <ul role="menu" aria-labelledby="menubutton" id="dropdown-content">
+        <li role="presentation">
+          <button role="menuitem" onclick="handleItemClick('Option 1')">
+            Option 1
+          </button>
+        </li>
+        <li role="presentation">
+          <button role="menuitem" onclick="handleItemClick('Option 2')">
+            Option 2
+          </button>
+        </li>
+        <li role="presentation">
+          <button role="menuitem" onclick="handleItemClick('Option 3')">
+            Option 3
+          </button>
+        </li>
+      </ul>
+    </div>
+    <div class="dropdown" onclick="toggleDropdown(this)">
+      <button
+        aria-haspopup="true"
+        id="menubutton"
+        aria-expanded="false"
+        aria-controls="dropdown-content"
+      >
+        Dropdown
+      </button>
+      <ul role="menu" aria-labelledby="menubutton" id="dropdown-content">
+        <li role="presentation">
+          <button role="menuitem" onclick="handleItemClick('Option 1')">
+            Option 1
+          </button>
+        </li>
+        <li role="presentation">
+          <button role="menuitem" onclick="handleItemClick('Option 2')">
+            Option 2
+          </button>
+        </li>
+        <li role="presentation">
+          <button role="menuitem" onclick="handleItemClick('Option 3')">
+            Option 3
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      function toggleDropdown(dropdown) {
+        const isExpanded = dropdown.getAttribute("aria-expanded") === "true";
+        const allDropdowns = document.querySelectorAll(".dropdown");
+
+        allDropdowns.forEach((otherDropdown) => {
+          if (otherDropdown !== dropdown) {
+            otherDropdown.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        dropdown.setAttribute("aria-expanded", String(!isExpanded));
+      }
+
+      function handleItemClick(option) {
+        alert(`Selected: ${option}`);
+      }
+    </script>
+  </body>
+</html>

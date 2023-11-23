@@ -129,6 +129,11 @@ body {
   z-index: 1;
   border-radius: 8px;
 
+  & > ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
   .divider {
     border-top: 1px solid #e1e1e1;
     margin-block: 5px;
@@ -255,5 +260,107 @@ article {
     filter: invert();
 
     cursor: pointer;
+  }
+}
+
+.accordion-wrapper {
+  right: 15;
+  margin-top: 20px;
+  padding: 5px 20px;
+  background-color: #f9f9f9;
+  min-width: 250px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  z-index: 1;
+  border-radius: 8px;
+}
+
+.accordion-wrapper .accordion-header .accordion-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-wrapper .accordion-header .head-others {
+  & > p {
+    color: #303030;
+    margin-top: 0;
+    font-size: 13px;
+  }
+
+  & > div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    & > p {
+      font-size: 12px;
+    }
+
+    & > .progressContainer {
+      width: 150px;
+      background-color: #e3e3e3;
+      height: 6px;
+      border-radius: 8px;
+    }
+  }
+}
+
+.progressContainer .progressBar {
+  border-radius: 8px 0px 0px 8px;
+  width: 40%;
+  height: 6px;
+  background-color: #4caf50;
+  text-align: center;
+  line-height: 32px;
+}
+
+.accordion-wrapper .accordion {
+  padding: 20px 0px;
+  margin-bottom: 10px;
+  background-color: #f3f3f3;
+  border-radius: 8px;
+
+  .head button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+  }
+
+  .head button img {
+    width: 30px;
+    vertical-align: middle;
+    filter: invert();
+  }
+
+  .body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .body .left {
+    margin-left: 35px;
+  }
+
+  .left p {
+    font-size: 12px;
+
+    &:has(a) a {
+      font-size: 14px;
+      text-decoration: none;
+    }
+  }
+
+  .left button {
+    cursor: pointer;
+    background-color: #303030;
+    color: #f6f3f6;
+    padding: 7px;
+    border-radius: 8px;
   }
 }

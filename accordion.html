@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .dropdown ul {
+        position: absolute;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: none;
+      }
+
+      .dropdown li {
+        padding: 10px;
+        background-color: #f9f9f9;
+      }
+
+      .dropdown li:hover {
+        background-color: #3498db;
+        color: #fff;
+      }
+
+      .dropdown[aria-expanded="true"] ul {
+        display: block;
+      }
+      #dropdownList[aria-hidden="false"] {
+        display: block !important;
+      }
+
+   #dropbtn[aria-expanded="true"] + #dropdownList {
+    display: block;
+   }
+    </style>
+  </head>
+  <body>
+    <div class="dropdown">
+      <button
+        id="dropbtn"
+        aria-haspopup="true"
+        aria-expanded="false"
+        onclick="toggleDropdown(this)"
+      >
+        Dropdown
+      </button>
+      <ul id="dropdownList" role="menu" aria-hidden="true">
+        <li role="menuitem" onclick="handleItemClick('Option 1')">Option 1</li>
+        <li role="menuitem" onclick="handleItemClick('Option 2')">Option 2</li>
+        <li role="menuitem" onclick="handleItemClick('Option 3')">Option 3</li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <button
+        id="dropbtn"
+        aria-haspopup="true"
+        aria-expanded="false"
+        onclick="toggleDropdown(this)"
+      >
+        Dropdown
+      </button>
+      <ul id="dropdownList" role="menu" aria-hidden="true">
+        <li role="menuitem" onclick="handleItemClick('Option 1')">Option 1</li>
+        <li role="menuitem" onclick="handleItemClick('Option 2')">Option 2</li>
+        <li role="menuitem" onclick="handleItemClick('Option 3')">Option 3</li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <button
+        id="dropbtn"
+        aria-haspopup="true"
+        aria-expanded="false"
+        onclick="toggleDropdown(this)"
+      >
+        Dropdown
+      </button>
+      <ul id="dropdownList" role="menu" aria-hidden="true">
+        <li role="menuitem" onclick="handleItemClick('Option 1')">Option 1</li>
+        <li role="menuitem" onclick="handleItemClick('Option 2')">Option 2</li>
+        <li role="menuitem" onclick="handleItemClick('Option 3')">Option 3</li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <button
+        id="dropbtn"
+        aria-haspopup="true"
+        aria-expanded="false"
+        onclick="toggleDropdown(this)"
+      >
+        Dropdown
+      </button>
+      <ul id="dropdownList" role="menu" aria-hidden="true">
+        <li role="menuitem" onclick="handleItemClick('Option 1')">Option 1</li>
+        <li role="menuitem" onclick="handleItemClick('Option 2')">Option 2</li>
+        <li role="menuitem" onclick="handleItemClick('Option 3')">Option 3</li>
+      </ul>
+    </div>
+
+    <script>
+      function toggleDropdown(dropdown) {
+        const dropdownList = document.querySelectorAll("#dropbtn");
+        console.log(dropdown);
+
+        dropdownList.forEach((drop, i) => {
+          // console.log(i);
+          // console.log(drop);
+          // drop.addEventListener("click", (event) => {
+
+          drop.onclick = () => {
+            console.log(i);
+            drop.setAttribute("aria-expanded", "true");
+            console.log(drop);
+            dropdownList.forEach((item, idx) => {
+              // console.log(idx);
+              dropdownList[idx].setAttribute("aria-expanded", "true");
+              if (i === idx) item.setAttribute("aria-expanded", "true");
+            });
+          };
+
+          // !drop[i].ariaHidden;
+          // const isHidden = drop[i].getAttribute("aria-hidden") === "true";
+
+          // drop.setAttribute("aria-hidden", String(!isHidden));
+          // drop.setAttribute("aria-expanded", "false");
+        });
+      }
+
+      // Add a separate function to handle closing the dropdown
+      function closeDropdown() {
+        const dropdownList = document.querySelectorAll("#dropdownList");
+
+        dropdownList.forEach((item) => {
+          item.setAttribute("aria-hidden", "true");
+        });
+
+        // Remove the document click event listener
+        document.removeEventListener("click", closeDropdown);
+      }
+
+      function handleItemClick(option) {
+        alert(`Selected: ${option}`);
+        closeDropdown();
+      }
+    </script>
+  </body>
+</html>

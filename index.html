@@ -41,6 +41,9 @@
             src="https://crushingit.tech/hackathon-assets/icon-bell.svg"
             alt="notification"
             class="notification-bell"
+            id="menubutton"
+            aria-haspopup="true"
+            aria-controls="menu"
           />
           <div class="notif-content">
             <p>Alerts</p>
@@ -50,7 +53,14 @@
           </div>
         </div>
         <div class="dropdown">
-          <button class="dropbtn">Davii Collections <span>DC</span></button>
+          <button
+            class="dropbtn"
+            id="menubutton"
+            aria-haspopup="true"
+            aria-controls="menu"
+          >
+            Davii Collections <span>DC</span>
+          </button>
           <div class="dropdown-content">
             <div class="header">
               <div>
@@ -62,28 +72,67 @@
                 alt="icon-checkmark-circle"
               />
             </div>
-            <a href="https://www.admin.shopify.com">
-              <div class="stores">
-                <img
-                  src="https://crushingit.tech/hackathon-assets/icon-store.svg"
-                  alt="icon-store"
-                />
-                <p>All stores</p>
-              </div>
-            </a>
-            <div class="divider"></div>
-            <a href="https://www.admin.shopify.com"> Help Center </a>
-            <a href="https://www.admin.shopify.com"> Changelog </a>
-            <a href="https://www.admin.shopify.com"> Community forums</a>
-            <a href="https://www.admin.shopify.com">Hire a Shopify Partner</a>
-            <a href="https://www.admin.shopify.com">Keyboard shortcuts</a>
-            <div class="divider"></div>
-            <a href="https://www.admin.shopify.com">
-              <p>David Micheal</p>
-              <p>davidmicheal@gmail.com</p>
-            </a>
-            <a href="https://www.admin.shopify.com">Manage account</a>
-            <a href="https://www.admin.shopify.com">Log out</a>
+            <ul id="menu" role="menu" aria-labelledby="menubutton">
+              <li role="presentation">
+                <a href="https://www.admin.shopify.com">
+                  <div class="stores">
+                    <img
+                      src="https://crushingit.tech/hackathon-assets/icon-store.svg"
+                      alt="icon-store"
+                      role="menuitem"
+                    />
+                    <p>All stores</p>
+                  </div>
+                </a>
+              </li>
+              <li role="presentation">
+                <div class="divider"></div>
+              </li>
+              <li role="presentation">
+                <a role="menuitem" href="https://www.admin.shopify.com">
+                  Help Center
+                </a>
+              </li>
+              <li role="presentation">
+                <a role="menuitem" href="https://www.admin.shopify.com">
+                  Changelog
+                </a>
+              </li>
+              <li role="presentation">
+                <a role="menuitem" href="https://www.admin.shopify.com">
+                  Community forums</a
+                >
+              </li>
+              <li role="presentation">
+                <a role="menuitem" href="https://www.admin.shopify.com"
+                  >Hire a Shopify Partner</a
+                >
+              </li>
+              <li role="presentation">
+                <a role="menuitem" href="https://www.admin.shopify.com"
+                  >Keyboard shortcuts</a
+                >
+              </li>
+              <li role="presentation">
+                <div class="divider"></div>
+              </li>
+              <li role="presentation">
+                <a role="menuitem" href="https://www.admin.shopify.com">
+                  <p>David Micheal</p>
+                  <p>davidmicheal@gmail.com</p>
+                </a>
+              </li>
+              <li role="presentation">
+                <a role="menuitem" href="https://www.admin.shopify.com"
+                  >Manage account</a
+                >
+              </li>
+              <li role="presentation">
+                <a role="menuitem" href="https://www.admin.shopify.com"
+                  >Log out</a
+                >
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -101,6 +150,179 @@
           />
         </div>
       </div>
+
+      <div class="accordion-wrapper">
+        <div class="accordion-header">
+          <div class="accordion-head">
+            <p>Setup guide</p>
+            <img
+              src="https://crushingit.tech/hackathon-assets/icon-arrow-down.svg"
+              alt="chevron"
+            />
+          </div>
+          <div class="head-others">
+            <p>Use this personalized guide to get your store up and running.</p>
+            <div>
+              <p>1 / 5 completed</p>
+              <div class="progressContainer">
+                <div class="progressBar"></div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion">
+            <div class="head">
+              <button>
+                <img
+                  src="https://crushingit.tech/hackathon-assets/icon-dashed-circle.svg"
+                  alt="checkbox"
+                />
+                <p>Customize your online store</p>
+              </button>
+            </div>
+            <div class="body">
+              <div class="left">
+                <p>
+                  Choose a theme and add your logo, colors, and images to
+                  reflect your brand.
+                </p>
+                <p><a href="#">Learn more</a></p>
+                <button>Customize theme</button>
+              </div>
+              <div class="right">
+                <img
+                  src="https://crushingit.tech/hackathon-assets/customise-store.png"
+                  alt="customize theme"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion">
+            <div class="head">
+              <button>
+                <img
+                  src="https://crushingit.tech/hackathon-assets/icon-dashed-circle.svg"
+                  alt="checkbox"
+                />
+                <p>Add your first product</p>
+              </button>
+            </div>
+            <div class="body">
+              <div class="left">
+                <p>
+                  Write a description, add photos, and set pricing for the
+                  products you plan to sell.
+                </p>
+                <p><a href="#">Learn more</a></p>
+                <button>Add product</button>
+                <button>Import product</button>
+              </div>
+              <div class="right">
+                <img
+                  src="https://crushingit.tech/hackathon-assets/product.png"
+                  alt="products"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion">
+            <div class="head">
+              <button>
+                <img
+                  src="https://crushingit.tech/hackathon-assets/icon-dashed-circle.svg"
+                  alt="checkbox"
+                />
+                <p>Add a custom domain</p>
+              </button>
+            </div>
+            <div class="body">
+              <div class="left">
+                <p>
+                  Your current domain is 222219.myshopify.com but you can add a
+                  custom domain to help customers find your online store.
+                </p>
+                <p><a href="#">Learn more</a></p>
+                <button>Add domain</button>
+              </div>
+              <div class="right">
+                <img
+                  src="https://crushingit.tech/hackathon-assets/website.png"
+                  alt="domain"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion">
+            <div class="head">
+              <button>
+                <img
+                  src="https://crushingit.tech/hackathon-assets/icon-dashed-circle.svg"
+                  alt="checkbox"
+                />
+                <p>Customize your online store</p>
+              </button>
+            </div>
+            <div class="body">
+              <div class="left">
+                <p>
+                  Your temporary store name is currently Davii collections. The store name appears in your admin and your online store.
+                </p>
+                <p><a href="#">Learn more</a></p>
+                <button>Name store</button>
+              </div>
+              <div class="right">
+                <img
+                  src="https://crushingit.tech/hackathon-assets/name-store.png"
+                  alt="name store"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion">
+            <div class="head">
+              <button>
+                <img
+                  src="https://crushingit.tech/hackathon-assets/icon-dashed-circle.svg"
+                  alt="checkbox"
+                />
+                <p>Set up a payment provider</p>
+              </button>
+            </div>
+            <div class="body">
+              <div class="left">
+                <p>
+                 Choose a payment provider to start accepting payments. You’ll need to create an account with the payment provider and set it up with your Shopify store.
+                </p>
+                <p><a href="#">Learn more</a></p>
+                <button>Set up payment</button>
+              </div>
+              <div class="right">
+                <img
+                  src="https://crushingit.tech/hackathon-assets/payment.png"
+                  alt="payment provider image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <label for="username">Username</label>
+      <input id="username" name="username" aria-describedby="username-desc" />
+      <button
+        aria-expanded="false"
+        aria-controls="username-desc"
+        aria-label="Help about username"
+        type="button"
+      >
+        <span aria-hidden="false">?</span>
+      </button>
+      <p id="username-desc" hidden>
+        Your username is the name that you use to log in to this service.
+      </p> -->
     </article>
 
     <script src="./app.js"></script>

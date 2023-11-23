@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .dropdown ul {
+        position: absolute;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: none;
+      }
+
+      .dropdown li {
+        padding: 10px;
+        background-color: #f9f9f9;
+      }
+
+      .dropdown li:hover {
+        background-color: #3498db;
+        color: #fff;
+      }
+
+      .dropdown[aria-expanded="true"] ul {
+        display: block;
+      }
+      #dropdownList[aria-hidden="false"] {
+        display: block !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dropdown">
+      <button
+        aria-haspopup="true"
+        aria-expanded="false"
+        onclick="toggleDropdown()"
+      >
+        Dropdown
+      </button>
+      <ul id="dropdownList" role="menu" aria-hidden="true">
+        <li role="menuitem" onclick="handleItemClick('Option 1')">Option 1</li>
+        <li role="menuitem" onclick="handleItemClick('Option 2')">Option 2</li>
+        <li role="menuitem" onclick="handleItemClick('Option 3')">Option 3</li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <button
+        aria-haspopup="true"
+        aria-expanded="false"
+        onclick="toggleDropdown()"
+      >
+        Dropdown
+      </button>
+      <ul id="dropdownList" role="menu" aria-hidden="true">
+        <li role="menuitem" onclick="handleItemClick('Option 1')">Option 1</li>
+        <li role="menuitem" onclick="handleItemClick('Option 2')">Option 2</li>
+        <li role="menuitem" onclick="handleItemClick('Option 3')">Option 3</li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <button
+        aria-haspopup="true"
+        aria-expanded="false"
+        onclick="toggleDropdown()"
+      >
+        Dropdown
+      </button>
+      <ul id="dropdownList" role="menu" aria-hidden="true">
+        <li role="menuitem" onclick="handleItemClick('Option 1')">Option 1</li>
+        <li role="menuitem" onclick="handleItemClick('Option 2')">Option 2</li>
+        <li role="menuitem" onclick="handleItemClick('Option 3')">Option 3</li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <button
+        aria-haspopup="true"
+        aria-expanded="false"
+        onclick="toggleDropdown()"
+      >
+        Dropdown
+      </button>
+      <ul id="dropdownList" role="menu" aria-hidden="true">
+        <li role="menuitem" onclick="handleItemClick('Option 1')">Option 1</li>
+        <li role="menuitem" onclick="handleItemClick('Option 2')">Option 2</li>
+        <li role="menuitem" onclick="handleItemClick('Option 3')">Option 3</li>
+      </ul>
+    </div>
+
+    <script>
+      function toggleDropdown() {
+        // const dropdownList = document.getElementById("dropdownList");
+        const dropdownList = document.querySelectorAll("#dropdownList");
+
+        dropdownList.forEach((drop, i) => {
+          drop.onclick = () => {
+            dropdownList.forEach((item, idx) => {
+              const isHidden = item.getAttribute("aria-hidden") === "false";
+
+              if (i === idx) {
+                item.setAttribute("aria-hidden", "true");
+                document.addEventListener("click", closeDropdown);
+              }
+              document.removeEventListener("click", closeDropdown);
+            });
+          };
+          const isHidden = drop.getAttribute("aria-hidden") === "true";
+
+          drop.setAttribute("aria-hidden", "false");
+
+          //   if (!isHidden) {
+          //     document.addEventListener("click", closeDropdown);
+          //   } else {
+          //     document.removeEventListener("click", closeDropdown);
+          //   }
+        });
+        // const isHidden = dropdownList.getAttribute("aria-hidden") === "true";
+
+        // dropdownList.setAttribute("aria-hidden", String(!isHidden));
+
+        // Add or remove event listener based on visibility for better accessibility
+        // if (!isHidden) {
+        //   document.addEventListener("click", closeDropdown);
+        // } else {
+        //   document.removeEventListener("click", closeDropdown);
+        // }
+      }
+
+      function handleItemClick(option) {
+        alert(`Selected: ${option}`);
+        closeDropdown();
+      }
+
+      function closeDropdown() {
+        const dropdownList = document.querySelectorAll("#dropdownList");
+        dropdownList.forEach((dropped) => {
+          dropped.setAttribute("aria-hidden", "true");
+          document.removeEventListener("click", closeDropdown);
+        });
+      }
+    </script>
+  </body>
+</html>

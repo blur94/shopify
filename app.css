@@ -338,6 +338,10 @@ article {
   }
 
   .body {
+    display: none;
+  }
+
+  .body[aria-hidden="false"] {
     display: flex;
     justify-content: space-between;
     align-items: center;

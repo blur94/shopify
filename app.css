@@ -281,6 +281,13 @@ article {
   align-items: center;
 }
 
+.accordion-wrapper
+  .accordion-header
+  .accordion-head[aria-expanded="true"]
+  img {
+  rotate: 180deg;
+}
+
 .accordion-wrapper .accordion-header .head-others {
   & > p {
     color: #303030;
@@ -315,7 +322,15 @@ article {
   line-height: 32px;
 }
 
-.accordion-wrapper .accordion {
+.accordion-container {
+  display: none;
+}
+
+.accordion-container[aria-hidden="false"] {
+  display: block;
+}
+
+.accordion-wrapper .accordion-container .accordion {
   padding: 20px 0px;
   margin-bottom: 10px;
   background-color: #f3f3f3;

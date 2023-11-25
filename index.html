@@ -153,7 +153,14 @@
 
       <div class="accordion-wrapper">
         <div class="accordion-header">
-          <div class="accordion-head">
+          <div
+            class="accordion-head"
+            aria-haspopup="true"
+            id="accordion"
+            aria-expanded="false"
+            type="button"
+            aria-controls="accordion-content"
+          >
             <p>Setup guide</p>
             <img
               src="https://crushingit.tech/hackathon-assets/icon-arrow-down.svg"
@@ -169,6 +176,15 @@
               </div>
             </div>
           </div>
+        </div>
+
+        <div
+          class="accordion-container"
+          aria-labelledby="accordion"
+          id="accordion-content"
+          role="region"
+          aria-hidden="true"
+        >
           <div class="accordion">
             <div class="head">
               <button

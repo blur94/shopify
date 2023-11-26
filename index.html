@@ -41,25 +41,33 @@
             src="https://crushingit.tech/hackathon-assets/icon-bell.svg"
             alt="notification"
             class="notification-bell"
-            id="menubutton"
+            id="notification-btn"
             aria-haspopup="true"
+            aria-expanded="false"
             aria-controls="menu"
           />
-          <div class="notif-content">
+          <div
+            class="notif-content"
+            aria-hidden="true"
+            aria-controls="notification-btn"
+          >
             <p>Alerts</p>
             <div>
               <p>Alerts about your store and account will show here</p>
             </div>
           </div>
         </div>
+
         <div class="dropdown">
           <button
             class="dropbtn"
-            id="menubutton"
+            id="menu-toggle"
+            aria-expanded="false"
             aria-haspopup="true"
             aria-controls="menu"
           >
-            Davii Collections <span>DC</span>
+            <span> Davii Collections</span>
+            <span>DC</span>
           </button>
           <div class="dropdown-content">
             <div class="header">
@@ -139,14 +147,19 @@
     </nav>
 
     <article>
-      <div class="plans">
-        <p>Extend your trial for $1/month for 3 months on select plans.</p>
+      <div class="plans" aria-hidden="false">
+        <div>
+          <p>Extend your trial for $1/month for 3 months on select plans.</p>
+          <a href="https://www.shopify.com/pricing">
+            <button class="btn-plan">Select a plan</button>
+          </a>
+        </div>
         <div class="action-plan">
-          <button class="btn-plan">Select a plan</button>
           <img
             src="https://crushingit.tech/hackathon-assets/icon-cross.svg"
             class="plan-img"
             alt="close button"
+            id="plan-trigger"
           />
         </div>
       </div>
@@ -170,9 +183,9 @@
           <div class="head-others">
             <p>Use this personalized guide to get your store up and running.</p>
             <div>
-              <p>1 / 5 completed</p>
+              <p id="progressCounter"></p>
               <div class="progressContainer">
-                <div class="progressBar"></div>
+                <div id="progressBar"></div>
               </div>
             </div>
           </div>
@@ -198,8 +211,8 @@
                   src="https://crushingit.tech/hackathon-assets/icon-dashed-circle.svg"
                   alt="checkbox"
                 />
-                <p>Customize your online store</p>
               </button>
+              <p>Customize your online store</p>
             </div>
             <div
               class="body"
@@ -238,8 +251,8 @@
                   src="https://crushingit.tech/hackathon-assets/icon-dashed-circle.svg"
                   alt="checkbox"
                 />
-                <p>Add your first product</p>
               </button>
+              <p>Add your first product</p>
             </div>
             <div
               class="body"
@@ -279,8 +292,8 @@
                   src="https://crushingit.tech/hackathon-assets/icon-dashed-circle.svg"
                   alt="checkbox"
                 />
-                <p>Add a custom domain</p>
               </button>
+              <p>Add a custom domain</p>
             </div>
             <div
               class="body"
@@ -319,8 +332,8 @@
                   src="https://crushingit.tech/hackathon-assets/icon-dashed-circle.svg"
                   alt="checkbox"
                 />
-                <p>Customize your online store</p>
               </button>
+              <p>Customize your online store</p>
             </div>
             <div
               class="body"
@@ -359,8 +372,8 @@
                   src="https://crushingit.tech/hackathon-assets/icon-dashed-circle.svg"
                   alt="checkbox"
                 />
-                <p>Set up a payment provider</p>
               </button>
+              <p>Set up a payment provider</p>
             </div>
             <div
               class="body"
